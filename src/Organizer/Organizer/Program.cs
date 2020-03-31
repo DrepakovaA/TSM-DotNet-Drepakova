@@ -5,74 +5,70 @@ public class Program
     public static void Main()
     {
         string[] days = new string[7];
-        for (int i = 0; i < 7; i++)
-        {
-            days[i] = "";
-        }
-
-        while (true)
-        {
-            string Mon = "Monday";
-            string Thue = "Thuesday";
-            string Wed = "Wednsday";
-            string Thu = "Thutsday";
-            string Fri = "Friday";
-            string Sat = "Saturday";
-            string Sun = "Sunday";
-
-            Console.WriteLine("Введите день недели: \n");
-            string day = Console.ReadLine();
-
-            int dayNumber = 0;
-            if (day.Equals(Mon))
-            {
-                dayNumber = 0;
-            }
-            else if (day.Equals(Thue))
-            {
-                dayNumber = 1;
-            }
-            else if (day.Equals(Wed))
-            {
-                dayNumber = 2;
-            }
-            else if (day.Equals(Thu))
-            {
-                dayNumber = 3;
-            }
-            else if (day.Equals(Fri))
-            {
-                dayNumber = 4;
-            }
-            else if (day.Equals(Sat))
-            {
-                dayNumber = 5;
-            }
-            else if (day.Equals(Sun))
-            {
-                dayNumber = 6;
-            }
-            else
-            {
-                dayNumber = 7;
-            }
-
-            if (dayNumber == 7)
-            {
-                continue;
-            }
-
-            if (days[dayNumber] == "")
-            {
-                Console.WriteLine("Введите план на день: ");
-                string work = Console.ReadLine();
-                days[dayNumber] = work;
-            }
-            else
-            {
-                Console.WriteLine(days[dayNumber] + "\n");
-            }
-        }
+        Menu();
 
     }
+    enum Days : byte
+    {
+        Monday = 0,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
+    static void Menu()
+    {
+        bool continue_print = true;
+        while (continue_print)
+        {
+        Console.WriteLine("Enter day");
+            Console.ReadLine();
+        Console.WriteLine("Enter plans");
+        string day = Console.ReadLine();
+            switch (day)
+            {
+                case "Mon":
+                case "Monday":
+                case "0":
+                    break;
+                case "Tues":
+                case "Tuesday":
+                case "1":
+                    break;
+                case "Wed":
+                case "Wednesday":
+                case "2":
+                    break;
+                case "Thurs":
+                case "Thursday":
+                case "3":
+                    break;
+                case "Fri":
+                case "Friday":
+                case "4":
+                    break;
+                case "Sat":
+                case "Saturday":
+                case "5":
+                    break;
+                case "Sun":
+                case "Sunday":
+                case "6":
+                    break;
+                case "exit":
+                    continue_print = false;
+                    break;
+            }
+                    
+
+
+
+        }
+        Console.WriteLine("Вы ввели {exit} и теперь можете выйти из цикла");
+    }
+
 }
+
+   
