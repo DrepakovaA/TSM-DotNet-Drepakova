@@ -4,10 +4,9 @@ public class Program
 {
     public static void Main()
     {
-        string[] days = new string[7];
         Menu();
-
     }
+
     enum Days : byte
     {
         Monday = 0,
@@ -18,20 +17,24 @@ public class Program
         Saturday,
         Sunday
     }
+
     static void Menu()
     {
         bool continue_print = true;
+
         while (continue_print)
         {
-        Console.WriteLine("Enter day");
+            Console.WriteLine("Enter day");
             Console.ReadLine();
-        Console.WriteLine("Enter plans");
-        string day = Console.ReadLine();
+            Console.WriteLine("Enter plans");
+
+            string day = Console.ReadLine();
             switch (day)
             {
                 case "Mon":
                 case "Monday":
                 case "0":
+                    // UNDONE:
                     break;
                 case "Tues":
                 case "Tuesday":
@@ -61,14 +64,8 @@ public class Program
                     continue_print = false;
                     break;
             }
-                    
-
-
-
         }
+
         Console.WriteLine("Вы ввели {exit} и теперь можете выйти из цикла");
     }
-
 }
-
-   

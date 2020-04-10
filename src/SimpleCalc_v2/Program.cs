@@ -47,15 +47,19 @@ namespace SimpleCalc
             Console.WriteLine("Напишите Ваше сообщение: ");
             string msg = Console.ReadLine();
             if (!messages.ContainsKey(day))
+            {
                 messages.Add(day, new List<string>());
+            }
             messages[day].Add(msg);
             Selection();
         }
+
         public MessageLeaver()
         {
             this.day = new DateTime();
             this.messages = new Dictionary<DateTime, List<string>>();
         }
+
         public void Selection()
         {
             Console.WriteLine("Выберите Ваше действие:\n1)Выбрать день\n2)Оставить сообщение\n3)Закрыть приложение");
@@ -86,12 +90,11 @@ namespace SimpleCalc
         }
     }
     class Program
-    { 
+    {
         static void Main(string[] args)
         {
             MessageLeaver msg_leaver = new MessageLeaver();
             msg_leaver.Selection();
         }
-        
     }
 }
